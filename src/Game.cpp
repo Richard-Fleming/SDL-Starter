@@ -68,7 +68,7 @@ void Game::update()
 		while( SDL_PollEvent( &e ) != 0 )
 		{
 			//User requests quit
-			if( e.type == SDL_QUIT )
+			if( e.type == SDL_QUIT)
 			{
 				quit = true;
 			}
@@ -79,6 +79,10 @@ void Game::update()
 	
 		//Update the surface
 		SDL_UpdateWindowSurface( gWindow );
+	}
+	if(quit)
+	{
+		endGame();
 	}
 }
 
